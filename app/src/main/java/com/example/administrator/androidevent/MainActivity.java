@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,11 +15,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         Button btn1 = (Button)findViewById(R.id.btn1);
-        btn1.setOnClickListener(this);
+        ButtonListener mListener = new ButtonListener();
+        btn1.setOnClickListener(mListener);
     }
 
-    public void onClick(View v) {
-        TextView txtView = (TextView)findViewById(R.id.tv1);
-        txtView.setText("Good Afternoon");
+    class ButtonListener implements View.OnClickListener {
+        public void onClick(View v) {
+            TextView txtView = (TextView) findViewById(R.id.tv1);
+            txtView.setText("Good Afternoon");
+        }
     }
 }
