@@ -1,6 +1,7 @@
 package com.example.administrator.androidevent;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             TextView txtView = (TextView) findViewById(R.id.tv1);
             txtView.setText("Good Afternoon");
+            Intent intent = new Intent(MainActivity.this, NewActivity.class);
+            startActivity(intent);
         }
     }
 }
